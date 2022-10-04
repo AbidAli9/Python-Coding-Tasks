@@ -1,0 +1,31 @@
+# Writing a program that tkaes numbers as input and print them in words as output
+
+# creating dictionary for words and digits
+words_dict = {0:"zero", 1:"one", 2:"two", 3:"three", 4:"four", 5:"five", 6:"six",
+         7:"seven", 8:"eight", 9:"nine", 10:"ten", 11:"eleven", 12:"tewelve",
+         13:"thirteen", 14:"fourteen", 15:"fifteen", 16:"sixteen", 17:"seventeen",
+         18:"eighteen", 19:"ninteen", 20:"twenty", 30:"thirty", 40:"fourty", 50:"fifty",
+         60:"sixty", 70:"seventy", 80:"eighty", 90:"ninty"}
+
+# loops the program so we don't have to run the code every time to enter values
+while 1:
+    number = int(input("Enter any number between 0-99 : ")) # user input
+
+    if number >=0 and number <100: # input number limit
+        
+        
+        if number in words_dict: # if number already exist in dictionary
+            print("-->",words_dict.get(number)) #print it
+        
+        # if number is not in dictionary    
+        else:  
+            # number%10 gives the 1s digit value
+            ones = number % 10  
+            # gives 10s digit value {e.g. 1s=7, 10s=40, word= Fourty Seven}
+            tens = int(number / 10) * 10 
+            # print final output
+            print("-->",words_dict.get(tens), words_dict.get(ones))
+    
+    # if input is above limit
+    else:
+        print("Input should be 0-99 only")
